@@ -73,6 +73,7 @@ formSearch.addEventListener("submit", function (event) {
   if(includs) {
     alert('ril cuy')
   }else{
-    alertWrong.textContent
+    alertWrong.textContent = "harap isi nama murid !!!"
+    alertWrong.style.color = "red"
   }
 });
