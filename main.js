@@ -6,55 +6,55 @@ const dataDB = [
     nilai: 48,
   },
   {
-    nama: "bagus",
+    nama: "riski",
     kelas: "IX",
     keterangan: "lulus",
     nilai: 86,
   },
   {
-    nama: "bagus",
+    nama: "arip",
     kelas: "IX",
     keterangan: "lulus",
     nilai: 92,
   },
   {
-    nama: "bagus",
+    nama: "padil",
     kelas: "IX",
     keterangan: "lulus",
     nilai: 78,
   },
   {
-    nama: "bagus",
+    nama: "restu",
     kelas: "IX",
     keterangan: "tidak lulus",
     nilai: 24,
   },
   {
-    nama: "bagus",
+    nama: "dani",
     kelas: "IX",
     keterangan: "lulus",
     nilai: 100,
   },
   {
-    nama: "bagus",
+    nama: "rina",
     kelas: "IX",
     keterangan: "lulus",
     nilai: 73,
   },
   {
-    nama: "bagus",
+    nama: "ririn",
     kelas: "IX",
     keterangan: "tidak lulus",
     nilai: 69,
   },
   {
-    nama: "bagus",
+    nama: "diko",
     kelas: "IX",
     keterangan: "lulus",
     nilai: 87,
   },
   {
-    nama: "bagus",
+    nama: "kenzo",
     kelas: "IX",
     keterangan: "tidak lulus",
     nilai: 55,
@@ -65,6 +65,14 @@ const formSearch = document.getElementById("formSearch");
 formSearch.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const inputUser = document.getElementById("inputSearch");
-  dataDB.includes(inputUser)
+  const inputUser = document.getElementById("inputSearch").value;
+  const alertWrong = document.getElementById("alertWrong")
+
+  const includs = dataDB.map((nama) => nama.nama).includes(inputUser)
+
+  if(includs) {
+    alert('ril cuy')
+  }else{
+    alertWrong.textContent
+  }
 });
