@@ -75,6 +75,10 @@ function card() {
   sectionView.append(div);
 }
 
+const manip = dataDB.map((namaMurid) => namaMurid.nama);
+const manipp = dataDB.map((ket) => ket.keterangan);
+const manippp = dataDB.map((nilai) => nilai.nilai);
+
 const formSearch = document.getElementById("formSearch");
 formSearch.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -82,24 +86,20 @@ formSearch.addEventListener("submit", function (event) {
   const inputUser = document.getElementById("inputSearch").value;
   const alertWrong = document.getElementById("alertWrong");
 
-  const manip = dataDB.map((namaMurid) => namaMurid.nama);
-  const manipp = dataDB.map((ket) => ket.keterangan);
-  const manippp = dataDB.map((nilai) => nilai.nilai);
-
   if (manip.includes(inputUser)) {
-    const index = manip.indexOf(inputUser)
-    card()
+    const index = manip.indexOf(inputUser);
+    card();
     b.innerHTML =
-        "nama : " +
-        inputUser +
-        "<br><br>" +
-        "kelas : IX" +
-        "<br>" +
-        "keterangan : " +
-        manipp[index] +
-        "<br>" +
-        "nilai : " +
-        manippp[index]
+      "nama : " +
+      inputUser +
+      "<br><br>" +
+      "kelas : IX" +
+      "<br>" +
+      "keterangan : " +
+      manipp[index] +
+      "<br>" +
+      "nilai : " +
+      manippp[index];
     alertWrong.textContent = "";
   } else {
     alertWrong.textContent = "harap isi nama murid yg ada!!!";
@@ -109,15 +109,12 @@ formSearch.addEventListener("submit", function (event) {
   }
 });
 
-const formView = document.getElementById('formView')
-formView.addEventListener("click", function(event) {
-  event.preventDefault();
+const semua = document.getElementById("semua");
+const lulus = document.getElementById("lulus");
+const tidaklulus = document.getElementById("tidaklulus");
 
-  const semua = document.getElementById('semua').value
-  const lulus = document.getElementById('lulus').value
-  const tidakLulus = document.getElementById('tidakLulus').value
-
-  if(semua) {
-    console.log('anjayy')
-  }
-})
+function semuanya() {
+  b.innerHTML = "anjayyy";
+  sectionView.innerHTML = "";
+}
+semua.addEventListener("click", semuanya());
