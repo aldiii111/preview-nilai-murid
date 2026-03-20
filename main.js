@@ -70,6 +70,11 @@ div.style.display = "flex";
 div.style.flexDirection = "column";
 const b = document.createElement("b");
 
+function card() {
+  div.append(b);
+  sectionView.append(div);
+}
+
 const formSearch = document.getElementById("formSearch");
 formSearch.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -77,20 +82,30 @@ formSearch.addEventListener("submit", function (event) {
   const inputUser = document.getElementById("inputSearch").value;
   const alertWrong = document.getElementById("alertWrong");
 
-  function card() {
-    div.append(b);
-    sectionView.append(div);
-  }
-
   const manip = dataDB.map((namaMurid) => namaMurid.nama);
-  const manipp = dataDB.map((ket) => ket.keterangan)
-  const manippp = dataDB.map((nilai) => nilai.nilai)
-  console.log(manip, manipp, manippp)
+  const manipp = dataDB.map((ket) => ket.keterangan);
+  const manippp = dataDB.map((nilai) => nilai.nilai);
+  console.log(manip, manipp, manippp);
 
   if (manip.includes(inputUser)) {
     if (inputUser === "bagus") {
       card();
-      b.innerHTML = "nama : " + inputUser + "<br><br>" + "kelas : IX" + "<br>" + "keterangan : " + manipp[0] + "<br>" + "nilai : " + manippp[0];
+      b.innerHTML =
+        "nama : " +
+        inputUser +
+        "<br><br>" +
+        "kelas : IX" +
+        "<br>" +
+        "keterangan : " +
+        manipp[0] +
+        "<br>" +
+        "nilai : " +
+        manippp[0];
+    }
+    if (inputUser === "riski") {
+      sectionView.append();
+      b.innerHTML = "";
+      // card()
     }
     console.log(inputUser);
   } else {
