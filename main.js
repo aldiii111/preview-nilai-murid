@@ -65,6 +65,7 @@ const dataDB = [
 
 const div = document.createElement("div");
 div.style.boxShadow = "0 2px 5px 2px rgb(0, 0, 0, 0.2)";
+div.style.display = "flex";
 div.style.padding = "10px";
 div.style.flexDirection = "column";
 const b = document.createElement("b");
@@ -115,12 +116,54 @@ formSearch.addEventListener("submit", function (event) {
         "nilai : " +
         manippp[1];
     }
-    div.style.display = "flex";
+    if (inputUser === "arip") {
+      card();
+      b.innerHTML =
+        "nama : " +
+        inputUser +
+        "<br><br>" +
+        "kelas : IX" +
+        "<br>" +
+        "keterangan : " +
+        manipp[2] +
+        "<br>" +
+        "nilai : " +
+        manippp[2];
+    }
+    if (inputUser === "padil") {
+      card();
+      b.innerHTML =
+        "nama : " +
+        inputUser +
+        "<br><br>" +
+        "kelas : IX" +
+        "<br>" +
+        "keterangan : " +
+        manipp[3] +
+        "<br>" +
+        "nilai : " +
+        manippp[3];
+    }
+    if (inputUser === "restu") {
+      card();
+      b.innerHTML =
+        "nama : " +
+        inputUser +
+        "<br><br>" +
+        "kelas : IX" +
+        "<br>" +
+        "keterangan : " +
+        manipp[4] +
+        "<br>" +
+        "nilai : " +
+        manippp[4];
+    }
+
     alertWrong.textContent = "";
   } else {
     alertWrong.textContent = "harap isi nama murid yg ada!!!";
     alertWrong.style.color = "red";
-    b.innerHTML = ""
-    div.style.display = "none"
+    b.innerHTML = "";
+    sectionView.innerHTML = "";
   }
 });
