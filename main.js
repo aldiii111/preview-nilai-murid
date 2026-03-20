@@ -85,7 +85,7 @@ formSearch.addEventListener("submit", function (event) {
   const manip = dataDB.map((namaMurid) => namaMurid.nama);
   const manipp = dataDB.map((ket) => ket.keterangan);
   const manippp = dataDB.map((nilai) => nilai.nilai);
-  console.log(manip, manipp, manippp);
+  console.log();
 
   if (manip.includes(inputUser)) {
     if (inputUser === "bagus") {
@@ -158,7 +158,76 @@ formSearch.addEventListener("submit", function (event) {
         "nilai : " +
         manippp[4];
     }
-
+    if (inputUser === "dani") {
+      card();
+      b.innerHTML =
+        "nama : " +
+        inputUser +
+        "<br><br>" +
+        "kelas : IX" +
+        "<br>" +
+        "keterangan : " +
+        manipp[5] +
+        "<br>" +
+        "nilai : " +
+        manippp[5];
+    }
+    if (inputUser === "rina") {
+      card();
+      b.innerHTML =
+        "nama : " +
+        inputUser +
+        "<br><br>" +
+        "kelas : IX" +
+        "<br>" +
+        "keterangan : " +
+        manipp[6] +
+        "<br>" +
+        "nilai : " +
+        manippp[6];
+    }
+    if (inputUser === "ririn") {
+      card();
+      b.innerHTML =
+        "nama : " +
+        inputUser +
+        "<br><br>" +
+        "kelas : IX" +
+        "<br>" +
+        "keterangan : " +
+        manipp[7] +
+        "<br>" +
+        "nilai : " +
+        manippp[7];
+    }
+    if (inputUser === "diko") {
+      card();
+      b.innerHTML =
+        "nama : " +
+        inputUser +
+        "<br><br>" +
+        "kelas : IX" +
+        "<br>" +
+        "keterangan : " +
+        manipp[8] +
+        "<br>" +
+        "nilai : " +
+        manippp[8];
+    }
+    if (inputUser === "kenzo") {
+      card();
+      b.innerHTML =
+        "nama : " +
+        inputUser +
+        "<br><br>" +
+        "kelas : IX" +
+        "<br>" +
+        "keterangan : " +
+        manipp[9] +
+        "<br>" +
+        "nilai : " +
+        manippp[9];
+    }
     alertWrong.textContent = "";
   } else {
     alertWrong.textContent = "harap isi nama murid yg ada!!!";
