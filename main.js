@@ -109,3 +109,15 @@ formSearch.addEventListener("submit", function (event) {
   }
 });
 
+const formView = document.getElementById('formView')
+formView.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  const semua = document.getElementById('semua').value
+  const lulus = document.getElementById('lulus').value
+  const tidakLulus = document.getElementById('tidakLulus').value
+
+  if(semua) {
+    console.log('anjayy')
+  }
+})
