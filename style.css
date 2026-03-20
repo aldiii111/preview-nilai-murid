@@ -17,3 +17,8 @@ main{
 p{
     margin: 2px;
 }
+#sectionView {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
