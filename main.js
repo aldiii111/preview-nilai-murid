@@ -70,6 +70,18 @@ div.style.padding = "10px";
 div.style.flexDirection = "column";
 const b = document.createElement("b");
 
+function createCard() {
+  const div = document.createElement("div");
+  div.style.boxShadow = "0 2px 5px 2px rgb(0, 0, 0, 0.2)";
+  div.style.display = "flex";
+  div.style.padding = "10px";
+  div.style.flexDirection = "column";
+  const b = document.createElement("b");
+
+  div.append(b);
+  sectionView.append(div);
+}
+
 function card() {
   div.append(b);
   sectionView.append(div);
@@ -112,9 +124,11 @@ formSearch.addEventListener("submit", function (event) {
 const semua = document.getElementById("semua");
 const lulus = document.getElementById("lulus");
 const tidaklulus = document.getElementById("tidaklulus");
+const formView = document.getElementById("formView");
 
 function semuanya() {
-  b.innerHTML = "anjayyy";
-  sectionView.innerHTML = "";
+  createCard();
+  
 }
-semua.addEventListener("click", semuanya());
+
+semua.addEventListener("click", semuanya);
