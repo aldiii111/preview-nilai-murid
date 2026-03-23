@@ -70,27 +70,27 @@ div.style.padding = "10px";
 div.style.flexDirection = "column";
 const b = document.createElement("b");
 
-let al = 0;
+function card() {
+  div.append(b);
+  sectionView.append(div);
+}
+
 function delCard() {
   b.innerHTML = "";
   sectionView.innerHTML = "";
 }
 
+let bhe;
 function addCard() {
-  const div = document.createElement("div");
-  div.style.boxShadow = "0 2px 5px 2px rgb(0, 0, 0, 0.2)";
-  div.style.display = "flex";
-  div.style.padding = "10px";
-  div.style.flexDirection = "column";
-  const b = document.createElement("b");
+  const dive = document.createElement("div");
+  dive.style.boxShadow = "0 2px 5px 2px rgb(0, 0, 0, 0.2)";
+  dive.style.display = "flex";
+  dive.style.padding = "10px";
+  dive.style.flexDirection = "column";
+  bhe = document.createElement("b");
 
-  div.append(b);
-  sectionView.append(div);
-}
-
-function card() {
-  div.append(b);
-  sectionView.append(div);
+  dive.append(bhe);
+  sectionView.append(dive);
 }
 
 const manip = dataDB.map((namaMurid) => namaMurid.nama);
@@ -136,10 +136,22 @@ const formView = document.getElementById("formView");
 function semuanya() {
   delCard();
   alertWrong.textContent = "";
-  dataDB.map((valuess) => {
-    addCard();
-    
-  });
+  dataDB
+    .sort((a, b) => b.nilai - a.nilai)
+    .map((valuess) => {
+      addCard();
+      bhe.innerHTML =
+        "nama : " +
+        valuess.nama +
+        "<br><br>" +
+        "kelas : IX" +
+        "<br>" +
+        "keterangan : " +
+        valuess.keterangan +
+        "<br>" +
+        "nilai : " +
+        valuess.nilai;
+    });
 }
 
 semua.addEventListener("click", semuanya);
