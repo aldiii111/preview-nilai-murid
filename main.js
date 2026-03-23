@@ -154,4 +154,50 @@ function semuanya() {
     });
 }
 
+function lulusnya() {
+  delCard();
+  alertWrong.textContent = "";
+  dataDB
+    .filter((nilai) => nilai.nilai >= 72)
+    .sort((a, b) => b.nilai - a.nilai)
+    .map((valuess) => {
+      addCard();
+      bhe.innerHTML =
+        "nama : " +
+        valuess.nama +
+        "<br><br>" +
+        "kelas : IX" +
+        "<br>" +
+        "keterangan : " +
+        valuess.keterangan +
+        "<br>" +
+        "nilai : " +
+        valuess.nilai;
+    });
+}
+
+function tidaklulusnya() {
+  delCard();
+  alertWrong.textContent = "";
+  dataDB
+    .filter((nilai) => nilai.nilai <= 72)
+    .sort((a, b) => b.nilai - a.nilai)
+    .map((valuess) => {
+      addCard();
+      bhe.innerHTML =
+        "nama : " +
+        valuess.nama +
+        "<br><br>" +
+        "kelas : IX" +
+        "<br>" +
+        "keterangan : " +
+        valuess.keterangan +
+        "<br>" +
+        "nilai : " +
+        valuess.nilai;
+    });
+}
+
 semua.addEventListener("click", semuanya);
+lulus.addEventListener("click", lulusnya);
+tidaklulus.addEventListener("click", tidaklulusnya);
