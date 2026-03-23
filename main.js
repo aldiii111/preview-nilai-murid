@@ -70,7 +70,13 @@ div.style.padding = "10px";
 div.style.flexDirection = "column";
 const b = document.createElement("b");
 
-function createCard() {
+let al = 0;
+function delCard() {
+  b.innerHTML = "";
+  sectionView.innerHTML = "";
+}
+
+function addCard() {
   const div = document.createElement("div");
   div.style.boxShadow = "0 2px 5px 2px rgb(0, 0, 0, 0.2)";
   div.style.display = "flex";
@@ -99,6 +105,7 @@ formSearch.addEventListener("submit", function (event) {
   const alertWrong = document.getElementById("alertWrong");
 
   if (manip.includes(inputUser)) {
+    delCard();
     const index = manip.indexOf(inputUser);
     card();
     b.innerHTML =
@@ -127,8 +134,12 @@ const tidaklulus = document.getElementById("tidaklulus");
 const formView = document.getElementById("formView");
 
 function semuanya() {
-  createCard();
-  
+  delCard();
+  alertWrong.textContent = "";
+  dataDB.map((valuess) => {
+    addCard();
+    
+  });
 }
 
 semua.addEventListener("click", semuanya);
