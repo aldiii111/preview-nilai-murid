@@ -180,7 +180,7 @@ function tidaklulusnya() {
   delCard();
   alertWrong.textContent = "";
   dataDB
-    .filter((nilai) => nilai.nilai <= 72)
+    .filter((nilai) => nilai.nilai < 72)
     .sort((a, b) => b.nilai - a.nilai)
     .map((valuess) => {
       addCard();
